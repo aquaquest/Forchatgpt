@@ -1,0 +1,83 @@
+<!-- sections/product-benefits.liquid -->
+<div class="benefits-section">
+  <div class="benefit">
+    <img src="{{ 'warehouse.png' | asset_url }}" alt="Benefit 1">
+    <h2>קל לאחסון</h2>
+  </div>
+  <div class="benefit">
+    <img src="{{ 'car.png' | asset_url }}" alt="Benefit 2">
+    <h2>נייד</h2>
+  </div>
+  <div class="benefit">
+    <img src="{{ 'Price.png' | asset_url }}" alt="Benefit 3">
+    <h2>מחיר משתלם</h2>
+  </div>
+</div>
+
+<style>
+  .benefits-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    text-align: center;
+    flex-wrap: wrap;
+    font-family: David;
+
+  }
+
+  .benefit {
+    flex: 1;
+    margin: 0 10px;
+    max-width: 300px;
+  }
+
+  .benefit img {
+    max-width: 100px;
+    margin-bottom: 15px;
+  }
+
+  .benefit h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .benefit p {
+    font-size: 1em;
+    color: #666;
+  }
+
+  @media (max-width: 768px) {
+    .benefits-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .benefit {
+      margin: 5px 0;
+    }
+
+    .benefit img {
+      max-width: 80px;
+    }
+
+    .benefit h3 {
+      font-size: 1.5em;
+    }
+
+    .benefit p {
+      font-size: 0.9em;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Icons-Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Icons-Section"
+    }
+  ]
+}
+{% endschema %}

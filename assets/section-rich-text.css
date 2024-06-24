@@ -1,0 +1,110 @@
+.rich-text {
+  z-index: 1;
+}
+
+.rich-text__wrapper {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 4rem / var(--font-body-scale));
+}
+
+.rich-text:not(.rich-text--full-width) .rich-text__wrapper {
+  margin: auto;
+  width: calc(100% - 8rem / var(--font-body-scale));
+}
+
+.rich-text__blocks {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .rich-text__wrapper {
+    width: 100%;
+  }
+
+  .rich-text__wrapper--left {
+    justify-content: flex-start;
+  }
+
+  .rich-text__wrapper--right {
+    justify-content: flex-end;
+  }
+
+  .rich-text__blocks {
+    max-width: 50rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .rich-text__blocks {
+    max-width: 78rem;
+  }
+}
+
+.rich-text__blocks * {
+  overflow-wrap: break-word;
+}
+
+.rich-text__blocks > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.rich-text__blocks > * + * {
+  margin-top: 2rem;
+}
+
+.rich-text__blocks > * + a {
+  margin-top: 3rem;
+}
+
+.rich-text .button {
+  margin-top: 1.5rem;
+  /* Existing styles may be impacting the button */
+}
+
+/* New styles for the Shop Now button */
+.rich-text .button {
+  background-color: #025F9C;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  border-radius: 15px;
+  /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+  transition: all 0.3s ease;
+}
+.rich-text .button:after{
+    box-shadow:none !important;
+
+}
+
+.rich-text .button:hover {
+  background-color: #013a63;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.rich-text .button:active {
+  background-color: #012a4a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.rich-text .button:focus {
+  outline: 0.2rem solid rgba(255, 255, 255, 0.5);
+  outline-offset: 0.3rem;
+  box-shadow: 0 0 0 0.1rem rgba(255, 255, 255, 0.5),
+              0 0 0 0.3rem rgba(0, 0, 0, 0.1);
+}
+
+/* Additional styles that may impact button appearance */
+.rich-text .button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,82 @@
+<style>
+    .video-slider-container {
+        padding: 10px 20px; /* Adjust padding as needed */
+    }
+    
+    .video-slider {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping to keep videos in a single row */
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .video-slide {
+        padding: 0 10px; /* Adjust horizontal padding between slides */
+        flex: 0 0 33.33%; /* Three videos per row on desktop */
+        box-sizing: border-box;
+    }
+    
+    @media (max-width: 768px) {
+        .video-slide {
+            flex: 0 0 50%; /* Two videos per row on mobile */
+        }
+    }
+    
+    .tiktok-video {
+        width: 100%;
+        border-radius: 12px; /* Rounded corners for videos */
+    }
+</style>
+
+<div class="video-slider-container">
+   <div class="video-slider">
+       {% if section.settings.video_1_url != blank %}
+       <div class="video-slide">
+           <video class="tiktok-video" autoplay loop muted playsinline width="100" height="177.777777778">
+               <source src="{{ section.settings.video_1_url }}" type="video/mp4">
+           </video>
+       </div>
+       {% endif %}
+       
+       {% if section.settings.video_2_url != blank %}
+       <div class="video-slide">
+           <video class="tiktok-video" autoplay loop muted playsinline width="100" height="177.777777778">
+               <source src="{{ section.settings.video_2_url }}" type="video/mp4">
+           </video>
+       </div>
+       {% endif %}
+       
+       {% if section.settings.video_3_url != blank %}
+       <div class="video-slide">
+           <video class="tiktok-video" autoplay loop muted playsinline width="100" height="177.777777778">
+               <source src="{{ section.settings.video_3_url }}" type="video/mp4">
+           </video>
+       </div>
+       {% endif %}
+   </div>
+</div>
+
+{% schema %}
+{
+    "name": "Video Slider",
+    "settings": [
+        {
+            "type": "url",
+            "id": "video_1_url",
+            "label": "Video 1 URL"
+        },
+        {
+            "type": "url",
+            "id": "video_2_url",
+            "label": "Video 2 URL"
+        },
+        {
+            "type": "url",
+            "id": "video_3_url",
+            "label": "Video 3 URL"
+        }
+    ]
+}
+{% endschema %}
+

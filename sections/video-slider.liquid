@@ -1,0 +1,48 @@
+<div class="video-slider-container" style="padding-top: 20px; margin-left: 0; margin-right: auto;">
+   <div class="video-slider" style="display: flex; flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start;">
+       {% if section.settings.video_1_url != blank %}
+       <div class="video-slide" style="margin-right: 15px;">
+           <video class="tiktok-video" autoplay loop muted playsinline width="100" height="177.777777778" style="border-radius: 10px;">
+               <source src="{{ section.settings.video_1_url }}" type="video/mp4">
+               <!-- Add additional source tags for other video formats if necessary -->
+           </video>
+       </div>
+       {% endif %}
+       {% if section.settings.video_2_url != blank %}
+       <div class="video-slide" style="margin-right: 15px;">
+           <video class="tiktok-video" autoplay loop muted playsinline width="100" height="177.777777778" style="border-radius: 10px;">
+               <source src="{{ section.settings.video_2_url }}" type="video/mp4">
+           </video>
+       </div>
+       {% endif %}
+       {% if section.settings.video_3_url != blank %}
+       <div class="video-slide" style="margin-right: 15px;">
+           <video class="tiktok-video" autoplay loop muted playsinline width="100" height="177.777777778" style="border-radius: 10px;">
+               <source src="{{ section.settings.video_3_url }}" type="video/mp4">
+           </video>
+       </div>
+       {% endif %}
+   </div>
+</div>
+{% schema %}
+{
+"name": "Video Slider",
+"settings": [
+{
+"type": "url",
+"id": "video_1_url",
+"label": "Video 1 URL"
+},
+{
+"type": "url",
+"id": "video_2_url",
+"label": "Video 2 URL"
+},
+{
+"type": "url",
+"id": "video_3_url",
+"label": "Video 3 URL"
+}
+]
+}
+{% endschema %}
